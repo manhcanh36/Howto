@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .accordion{
+            background-color: #555555;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+        }
+        .active,.accordion{
+            background-color: #ccc;
+        }
+        .panel{
+            padding: 0 18px;
+            background-color: white;
+            display: none;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <button class="accordion">Phần 1</button>
+    <div class="panel">
+        <p>Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover)</p>
+    </div>
+    <button class="accordion">Phần 2</button>
+    <div class="panel">
+        <p>Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover)</p>
+    </div>
+    <button class="accordion">Phần 3</button>
+    <div class="panel">
+        <p>Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover)</p>
+    </div>
+    <script type="text/javascript">
+        var acc=document.getElementsByClassName('accordion');
+        var i;
+        for(i=0; i<acc.length;i++){
+            acc[i].addEventListener('click',function () {
+                this.classList.toggle('active');
+                var panel = this.nextElementSibling;
+                if(panel.style.display==='block'){
+                    panel.style.display==='none';
+                }else{
+                    panel.style.display='block';
+                }
+            })
+        }
+    </script>
+</body>
+</html>
